@@ -8,13 +8,13 @@ const popupTitle = document.querySelector('.profile__name');
 const popupSubtitle = document.querySelector('.profile__text'); 
 
 function openPopup() {
-    popup.classList.remove('popup__hidden');
+    popup.classList.remove('popup_hidden');
     popupName.value = popupTitle.textContent; 
     popupAbout.value = popupSubtitle.textContent; 
 }
 
 function closePopup() {
-    popup.classList.add('popup__hidden');
+    popup.classList.add('popup_hidden');
 }
 
 button.addEventListener('click', function () {

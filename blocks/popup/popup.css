@@ -28,6 +28,6 @@ margin: 34px 64px 54px 36px;
     }
   }
 
-  .popup__hidden {
+  .popup_hidden {
       display: none;
   }
