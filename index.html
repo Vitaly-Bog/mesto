@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Исследователь океана Жак-Ив Кусто, Жак-Ив Кусто, Карачаевск, Гора Эльбрус, Домбай" />
+    <meta name="description" content="Исследователь океана Жак-Ив Кусто" />
+    <link rel="stylesheet" href="pages/index.css" />
+    <title>Жак-Ив Кусто</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="логотип Mesto" />
+    </header>
+    <main class="content">
+        <section class="profile">
+            <img class="profile__avatar" src="./images/image.jpg" alt="Жак-Ив Кусто" />
+            <div class="profile__info">
+                <div class="profile__title">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button type="button" class="profile__edit-button"></button>
+                </div>
+                <p class="profile__text">Исследователь океана</p>
+            </div>
+            <button type="button" class="profile__add-button">
+            </button>
+        </section>
+        <section class="elements">
+            <ul class="elements__item">
+                <li class="element">
+                    <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="церковь" />
+                    <div class="element__description">
+                        <h3 class="element__title">Карачаевск</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/kirill-pershin-1404681-unsplash.jpg" alt="гора" />
+                    <div class="element__description">
+                        <h3 class="element__title">Гора Эльбрус</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/place-kosa.jpg" alt="коса" />
+                    <div class="element__description">
+                        <h3 class="element__title">Коса</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/place-winter-baikal.jpg" alt="байкал" />
+                    <div class="element__description">
+                        <h3 class="element__title">Байкал</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/kirill-pershin-1556355-unsplash.jpg" alt="гора" />
+                    <div class="element__description">
+                        <h3 class="element__title">Донбай</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class="element__image" src="images/place-altai.jpg" alt="лес" />
+                    <div class="element__description">
+                        <h3 class="element__title">Алтай</h3>
+                        <button class="element__like" type="button"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2022. Mesto Russia</p>
+        </footer>
+        <div class="popup popup__hidden">
+            <div class="popup__container">
+                <button type="button" class="popup__close-btn"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form" name="form" method="post" action="#">
+                    <input class="popup__input popup__input_name" name="name" required type="text" placeholder="Имя"
+                        value="Жак-Ив Кусто">
+                    <input class="popup__input popup__input_about" name="about" required type="text"
+                        placeholder="О себе" value="Исследователь океана">
+                    <button class="popup__submit-btn" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+        <script src="./index.js"> </script>
+</body>
+
+</html>
