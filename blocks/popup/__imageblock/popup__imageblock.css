@@ -1,0 +1,15 @@
+.popup__imageblock {
+    position: relative;
+    width: 816px;
+    height: 540px;
+    margin: 90px 232px;
+    object-fit: cover;
+   }
+
+@media screen and (max-width: 550px) {
+    .popup__imageblock {
+    width: 240px;
+    height: 299px;
+    margin: 136px 40px 133px 40px; 
+    }
+  }
