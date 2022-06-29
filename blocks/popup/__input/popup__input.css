@@ -5,16 +5,8 @@
     line-height: 17px;
     border: none;
     border-bottom: 1px solid #c9c6c6;
-    margin-bottom: 30px;
     height: 27px;
+    margin-bottom: 5px;
     }
     
-    .popup__input:last-of-type {
-        margin-bottom: 48px;
-    }
-    
-    @media screen and (max-width: 550px) {
-        .popup__input:last-of-type {
-            margin-bottom: 45px;
-        }
-      }
+  
