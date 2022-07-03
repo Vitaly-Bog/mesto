@@ -37,7 +37,7 @@ function closePopup(popupElement) {
 
 /*изменение профиля*/
 const profilePopup = document.querySelector(".popup_editform");
-const profilecontainer = profilePopup.querySelector(".popup__container");
+const profileFormElement = profilePopup.querySelector(".popup__form");
 const profilePopupCloseBtn = profilePopup.querySelector(".popup__close-btn");
 const nameInput = profilePopup.querySelector(".popup__input_name");
 const aboutInput = profilePopup.querySelector(".popup__input_about");
@@ -63,11 +63,11 @@ editProfileBtn.addEventListener("click", openProfilePopup);
 profilePopupCloseBtn.addEventListener("click", function () {
   closePopup(profilePopup);
 });
-profilePopup.addEventListener("submit", handleProfileFormSubmit);
+profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 /*попап новой карточки*/
 const newElementPopup = document.querySelector(".popup_newplace");
-const newElementcontainer = newElementPopup.querySelector(".popup__container");
+const newElementForm = newElementPopup.querySelector(".popup__form");
 const newElementPopupCloseBtn =
   newElementPopup.querySelector(".popup__close-btn");
 const placeInput = newElementPopup.querySelector(".popup__input_place");
@@ -81,6 +81,7 @@ function openNewElementPopup() {
   placeInput.value = "";
   urlInput.value = "";
   popupButton.setAttribute('disabled', true);
+  popupButton.classList.add("popup__button_disabled");
 }
 
 function handleAddCardFormSubmit(evt) {
@@ -92,7 +93,7 @@ newElementButton.addEventListener("click", openNewElementPopup);
 newElementPopupCloseBtn.addEventListener("click", function () {
   closePopup(newElementPopup);
 });
-newElementPopup.addEventListener("submit", handleAddCardFormSubmit);
+newElementForm.addEventListener("submit", handleAddCardFormSubmit);
 
 /*темплайт */
 const cardTemplate = document.querySelector("#card_template").content;
