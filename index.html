@@ -8,7 +8,7 @@
     <meta name="description" content="Исследователь океана Жак-Ив Кусто" />
     <link rel="stylesheet" href="pages/index.css" />
     <title>Жак-Ив Кусто</title>
-  </head>
+</head>
 
 <body class="page">
     <header class="header">
@@ -65,7 +65,7 @@
         <div class="popup__container">
             <button type="button" class="popup__close-btn"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form" name="form" novalidate>
+            <form class="popup__form popup__newform" name="form" novalidate>
                 <input class="popup__input popup__input_place" name="place" id='input-place' type="text"
                     placeholder="Название" minlength="2" maxlength="30" value="" required>
                 <span class="popup__error input-place-error"></span>
@@ -83,9 +83,11 @@
             <button type="button" class="popup__close-btn"></button>
         </div>
     </div>
-    <script src="./js/initial-cards.js"> </script>
-    <script src="./js/validate.js"> </script>
-    <script src="./js/index.js"> </script>
+    <script type="module" src="./js/initialCards.js"> </script>
+    <script type="module" src="./js/Card.js"> </script>
+    <script type="module" src="./js/Config.js"> </script>
+    <script type="module" src="./js/Formvalidator.js"> </script>
+    <script type="module" src="./js/index.js"> </script>
 
 </body>
 

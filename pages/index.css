@@ -1,8 +1,10 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/fonts.css);
 @import url(../blocks/page/page.css);
-@import url(../js/validate.js);
-@import url(../js/initial-cards.js);
+@import url(../js/initialCards.js);
+@import url(../js/Card.js);
+@import url(../js/Config.js);
+@import url(../js/Formvalidator.js);
 @import url(../js/index.js);
 @import url(../blocks/cards/__list/cards__list.css);
 @import url(../blocks/card/card.css);
