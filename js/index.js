@@ -22,7 +22,7 @@ const profileFormElement = profilePopup.querySelector(".popup__form");
 const profilePopupCloseBtn = profilePopup.querySelector(".popup__close-btn");
 const nameInput = profilePopup.querySelector(".popup__input_name");
 const aboutInput = profilePopup.querySelector(".popup__input_about");
-const editProfileBtn = document.querySelector(".profile__edit-button");
+const ProfileEditBtn = document.querySelector(".profile__edit-button");
 const profileName = document.querySelector(".profile__name");
 const profiletext = document.querySelector(".profile__text");
 
@@ -35,6 +35,7 @@ const urlInput = newElementPopup.querySelector(".popup__input_url");
 const newElementButton = document.querySelector(".profile__add-button");
 const cardsList = document.querySelector(".cards__list");
 const popupButton = newElementPopup.querySelector(".popup__button");
+
 
 /*темплайт */
 const cardTemplate = document.querySelector("#card_template").content;
@@ -55,9 +56,7 @@ const closePopupByEscape = (e) => {
     return;
   }
   const popupElement = document.querySelector(".popup_opened");
-  if (popupElement) {
-    closePopup(popupElement);
-  }
+  closePopup(popupElement);
 };
 
 /*закрытие по оверлей*/
@@ -66,9 +65,7 @@ const closePopupByClick = (e) => {
     return;
   }
   const popupElement = document.querySelector(".popup_opened");
-  if (popupElement) {
-    closePopup(popupElement);
-  }
+  closePopup(popupElement);
 };
 
 /* закрытие по крестику*/
@@ -109,7 +106,7 @@ function handleProfileFormSubmit(evt) {
   profiletext.textContent = description;
   closePopup(profilePopup);
 }
-editProfileBtn.addEventListener("click", openProfilePopup);
+ProfileEditBtn.addEventListener("click", openProfilePopup);
 profilePopupCloseBtn.addEventListener("click", function () {
   closePopup(profilePopup);
 });
@@ -144,12 +141,13 @@ initialCards.forEach((item) => {
 
 /*функция открытия попап для создания карточки*/
 function openNewElementPopup() {
+  formAddElement.resetForm();
   openPopup(newElementPopup);
+  formAddElement.resetInputError();
   placeInput.value = "";
   urlInput.value = "";
-  popupButton.setAttribute('disabled', true);
-  popupButton.classList.add("popup__button_disabled");
 }
+
 newElementButton.addEventListener("click", openNewElementPopup);
 newElementPopupCloseBtn.addEventListener("click", function () {
   closePopup(newElementPopup);
@@ -160,16 +158,6 @@ function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
   cardsList.prepend(createCard(placeInput.value, urlInput.value));
   closePopup(newElementPopup);
+
 }
 newElementForm.addEventListener("submit", handleAddCardFormSubmit);
-
-
-// LISTENERS
-// При нажатии на кнопку "Редактировать":
-// 1. Сбрасываем форму 
-// 2. Открываем попап редактирования данных профиля.
-// 3. Активируем кнопку "submit";
-formEditProfile.addEventListener('click', () => {
-  openProfileForm();
-  formEditProfile.resetValidation();
-});

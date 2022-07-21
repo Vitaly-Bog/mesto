@@ -7,7 +7,7 @@ export class FormValidator {
   };
 
   //добавть класс ошибки 
-  _showInputError(inputElement) {
+  _showInputError(inputElement, errorMessage) {
     this._errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     this._errorElement.classList.add(this._config.errorClass);
     inputElement.classList.add(this._config.inputErrorClass);
@@ -31,6 +31,13 @@ export class FormValidator {
     }
   };
 
+  //Функция проверяет валидность полей input
+  _hasInvalidInput() {
+    return this._inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
+    });
+  };
+
   //Переключение состояния кнопки
   _toggleButtonState() {
     // Если есть хотя бы один невалидный инпут
@@ -47,22 +54,34 @@ export class FormValidator {
 
   //Обработчик формы
   _setEventListeners() {
-    this._inputList.forEach(inputElement => {
+    this._toggleButtonState();
+
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-        this._checkInputValidity(inputElement)
-        this._toggleButtonState()
+        this._checkInputValidity(inputElement);
+        this._toggleButtonState();
       });
     });
   };
 
+
   //Включение валидации
   enableValidation() {
+    this._formElement.addEventListener('submit', (evt) => {
+      // Отменяем стандартное поведение.
+      evt.preventDefault();
+    });
     this._setEventListeners();
   };
 
-  //Сбрасываем ошибки при открытии попапов
+  //Функция интеллектуально переключает кнопку в попапе при его открытии
   resetInputError() {
     this._inputList.forEach(inputElement => this._hideInputError(inputElement));
     this._toggleButtonState();
   };
-};
+
+  // Функция сброса формы и ошибок при открытии попапов
+  resetForm() {
+    this._formElement.reset();
+  }
+}
