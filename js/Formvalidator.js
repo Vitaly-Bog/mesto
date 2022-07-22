@@ -7,7 +7,7 @@ export class FormValidator {
   };
 
   //добавть класс ошибки 
-  _showInputError(inputElement, errorMessage) {
+  _showInputError(inputElement) {
     this._errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
     this._errorElement.classList.add(this._config.errorClass);
     inputElement.classList.add(this._config.inputErrorClass);
@@ -67,11 +67,7 @@ export class FormValidator {
 
   //Включение валидации
   enableValidation() {
-    this._formElement.addEventListener('submit', (evt) => {
-      // Отменяем стандартное поведение.
-      evt.preventDefault();
-    });
-    this._setEventListeners();
+     this._setEventListeners();
   };
 
   //Функция интеллектуально переключает кнопку в попапе при его открытии
@@ -80,8 +76,5 @@ export class FormValidator {
     this._toggleButtonState();
   };
 
-  // Функция сброса формы и ошибок при открытии попапов
-  resetForm() {
-    this._formElement.reset();
-  }
+
 }
