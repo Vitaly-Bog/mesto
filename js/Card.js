@@ -1,8 +1,8 @@
 export class Card {
-  constructor(name, link, templateSelector, handleCardClick) {
+  constructor(name, link, card_template, handleCardClick) {
     this._name = name;
     this._link = link;
-    this._templateSelector = templateSelector;
+    this._card_template = card_template;
     this._element = this._getTemplate();
     this._cardImage = this._element.querySelector('.card__image');
     this._handleCardClick = handleCardClick;
@@ -10,9 +10,12 @@ export class Card {
 
   //карточка
   _getTemplate() {
-    const cardElement = this._templateSelector.querySelector('.card').cloneNode(true);
-
-    return cardElement;
+      const cardElement = document
+      .querySelector(this._card_template)
+      .content
+      .querySelector('.card')
+      .cloneNode(true);
+      return cardElement;
   }
 
   generateCard() {

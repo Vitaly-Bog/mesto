@@ -38,7 +38,7 @@ const popupButton = newElementPopup.querySelector(".popup__button");
 
 
 /*темплайт */
-const cardTemplate = document.querySelector("#card_template").content;
+
 
 
 /*валидация*/
@@ -127,7 +127,7 @@ container.prepend(card);
 
 /* Функция создания карточки из класса.*/
 function createCard(name, link) {
-const card = new Card(name, link, cardTemplate, handleCardClick);
+const card = new Card(name, link, '#card_template', handleCardClick);
 const cardElement = card.generateCard();
 return cardElement;
 }
